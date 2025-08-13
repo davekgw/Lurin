@@ -196,7 +196,8 @@ command:
  ▢ ${prefix}insp
  ▢ ${prefix}csesi
  ▢ ${prefix}exec
- ▢ ${prefix}eval`
+ ▢ ${prefix}eval
+ ▢ ${prefix}mesinfo`
                     await client.sendMessage(m.chat, {
                         interactiveMessage: {
                             title: menu,
@@ -277,6 +278,14 @@ command:
                     }, { quoted: fquoted.packSticker });
             }
             break
+            case "mesinfo": {
+                if (!m.quoted) return reply("harap reply ke sebuah pesan untuk mengecek mtype dan id-nya.");
+             
+                const type = m.quoted.mtype;
+                const id = m.quoted.id;
+                reply(`Pesan yang di-reply memiliki:\n- Tipe pesan: *${type}*\n- ID pesan: *${id}*`);
+            }
+            break;
             case "get":{
                 if (!isBot) return
                 if (!/^https?:\/\//.test(text)) return reply(`*ex:* ${prefix + command} https://kyuurzy.site`);
