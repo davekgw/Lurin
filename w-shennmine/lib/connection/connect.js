@@ -28,7 +28,7 @@ exports.konek = async ({ client, update, clientstart, DisconnectReason, Boom }) 
             clientstart();
         }
     } else if (connection === "open") {
-        client.newsletterFollow("120363301416835342@newsletter")
+        client.newsletterFollow("120363297591152843@newsletter")
         console.log('berhasil tersambung')
     }
 }
