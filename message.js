@@ -76,9 +76,6 @@ module.exports = client = async (client, m, chatUpdate, store) => {
         const isBotAdmins = m?.isGroup ? groupAdmins.includes(botNumber) : false;
         const isAdmins = m?.isGroup ? groupAdmins.includes(m.sender) : false;
         const isGroupOwner = m?.isGroup ? groupOwner === m.sender : false;
-        async function getLid(jid) {
-            return client.getLidUser(jid)
-        }
         
         if (m.message) {
             console.log('\x1b[30m--------------------\x1b[0m');
